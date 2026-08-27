@@ -1,0 +1,6 @@
+import { CalendarDays, CheckCircle2, ClipboardList, FileText, Filter, RefreshCcw, Search, UserRound } from 'lucide-react';
+import { PageHeader } from '../../components/ui/PageHeader';
+import { historyEntries } from '../../data/mockData';
+
+const icons = [CheckCircle2, RefreshCcw, ClipboardList, UserRound, FileText, RefreshCcw, ClipboardList];
+export function HistoryPage() { return <div><PageHeader title="Histórico" subtitle="Rastreabilidade completa das ações e alterações da operação." /><section className="panel history-panel"><div className="table-toolbar"><div className="search-box"><Search size={17} /><input placeholder="Buscar por OS, usuário ou ação..." /></div><button className="filter-button"><CalendarDays size={16} /> 26/08/2026</button><button className="filter-button"><Filter size={16} /> Todas as ações</button></div><div className="history-list">{historyEntries.map((entry, index) => { const Icon = icons[index]; return <article key={`${entry.time}-${index}`}><span className="history-icon"><Icon size={18} /></span><div><p><strong>{entry.actor}</strong> {entry.action}</p><small>Registro: OS #2026-0147 · {entry.time}</small></div><time>{entry.time}</time></article>; })}</div></section></div>; }

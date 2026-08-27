@@ -1,0 +1,4 @@
+import { AlertTriangle, ArrowLeft, Camera, MessageSquareWarning, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+export function MobileReturnedPage() { return <div className="mobile-page returned-page"><Link className="mobile-back" to="/mobile"><ArrowLeft /> Início</Link><span className="returned-icon"><MessageSquareWarning /></span><h1>Correção solicitada</h1><p>A OS #0147 foi devolvida pelo gestor com um item para corrigir.</p><section className="correction-card"><span><AlertTriangle /> EVIDÊNCIA AUSENTE</span><h2>Adicionar fotografia final</h2><p>“Precisamos de uma fotografia final com visão ampla do setor B para concluir a validação.”</p><small>Lucas Martins · Hoje, 16:54</small></section><button className="evidence-fix"><Camera /><span><strong>Fotografia final · Setor B</strong><small>Toque para registrar a evidência</small></span></button><button className="mobile-primary-button"><Send /> Corrigir e reenviar</button></div>; }

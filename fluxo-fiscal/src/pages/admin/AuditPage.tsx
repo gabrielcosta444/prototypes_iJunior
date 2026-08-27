@@ -1,0 +1,7 @@
+import { Bot, CalendarDays, ChevronDown, FileSearch, Filter, Search, ShieldCheck, UserRound } from 'lucide-react';
+import { PageHeader } from '../../components/ui/PageHeader';
+import { auditEvents } from '../../data/mockData';
+
+export function AuditPage() {
+  return <div><PageHeader title="Histórico de Auditoria" subtitle="Rastreie todas as ações realizadas por usuários, sistemas e automações." actions={<span className="audit-protected"><ShieldCheck size={15} />Registro protegido</span>} /><section className="audit-filters card"><label><Search size={15} /><input placeholder="Buscar no histórico..." /></label>{[['Usuário', UserRound], ['Tipo de ação', Filter], ['Período', CalendarDays], ['Documento', FileSearch]].map(([label, Icon]) => { const I = Icon as typeof UserRound; return <button key={label as string}><I size={13} />{label as string}<ChevronDown size={12} /></button>; })}</section><section className="audit-card card"><div className="audit-head"><span>Data e horário</span><span>Usuário</span><span>Ação</span><span>Registro afetado</span></div><div className="audit-list">{auditEvents.map((event, index) => <div key={`${event.time}-${index}`}><time><strong>{event.time}</strong><span>26/08/2026</span></time><div className="audit-actor"><span className={event.actorType}>{event.actorType === 'system' ? <Bot size={15} /> : 'GM'}</span><strong>{event.actor}</strong></div><p>{event.action}</p><a href="#">{event.record}</a></div>)}</div></section></div>;
+}

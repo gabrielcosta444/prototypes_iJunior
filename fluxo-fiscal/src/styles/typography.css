@@ -1,0 +1,277 @@
+/* Escala tipográfica de apresentação: legível sem perder a densidade B2B. */
+body { font-size: var(--text-base); line-height: 1.45; }
+h1 { font-size: 30px; }
+h2 { font-size: 18px; }
+h3 { font-size: 16px; }
+button, input, select, textarea { font-size: var(--text-md); }
+
+/* Estrutura e navegação */
+.brand__copy small,
+.sidebar__section-label,
+.sidebar__link em,
+.sidebar__health span,
+.sidebar__user span,
+.supplier-company div span,
+.login-help,
+.source-cloud span,
+.login-visual__proof span { font-size: var(--text-xs); }
+
+.sidebar__context,
+.sidebar__user strong,
+.supplier-company strong,
+.login-form > label { font-size: var(--text-md); }
+
+.sidebar__link { min-height: 43px; font-size: 14px; }
+.sidebar__health strong,
+.sidebar__logout,
+.topbar__profile,
+.topbar__search input,
+.sidebar__supplier-footer .button,
+.supplier-topbar,
+.login-form__meta,
+.login-flow__item strong,
+.login-visual__proof strong { font-size: var(--text-sm); }
+
+.login-kicker,
+.login-visual__eyebrow { font-size: var(--text-xs); }
+
+/* Componentes compartilhados */
+.button { font-size: var(--text-md); }
+.button--md { font-size: 14px; }
+.button--sm { font-size: var(--text-md); }
+.status-badge { font-size: var(--text-md); }
+.page-header p { font-size: var(--text-base); }
+.page-header__eyebrow { font-size: var(--text-sm); }
+.metric-card__label { font-size: 14px; }
+.metric-card__value { font-size: 30px; }
+.metric-card__helper { font-size: var(--text-md); }
+.card__header p { font-size: var(--text-md); }
+
+/* Dashboard */
+.period-select { font-size: var(--text-md); }
+.chart-legend,
+.origin-donut__legend > div { font-size: var(--text-xs); }
+.origin-donut__chart span,
+.orchestration-stage__head small,
+.orchestration-stage__items span,
+.live-indicator,
+.integration-summary .status-badge { font-size: var(--text-caption); }
+.automation-badge,
+.processing-list__item > div,
+.attention-count,
+.integration-logo { font-size: var(--text-xs); }
+.orchestration-stage__head h3,
+.processing-list__item strong,
+.integration-summary__item strong,
+.card-link,
+.recent-pendencies__item strong,
+.recent-pendencies__item .button,
+.recent-pendencies__all { font-size: var(--text-sm); }
+.integration-summary__item div span,
+.recent-pendencies__item div span,
+.recent-pendencies__item p { font-size: var(--text-xs); }
+
+/* Tabelas e Central de Documentos */
+.document-search { height: 46px; }
+.document-search input { font-size: var(--text-md); }
+.document-filters button { min-height: 36px; font-size: var(--text-sm); }
+.data-table th { height: 46px; padding-inline: 12px; font-size: 11px; }
+.data-table td { height: 68px; padding-inline: 12px; font-size: var(--text-sm); }
+.data-table input[type="checkbox"] { width: 15px; height: 15px; }
+.document-cell > span { width: 34px; height: 34px; }
+.document-cell strong,
+.supplier-cell strong { font-size: 13px; }
+.document-cell small { color: #667085; font-size: 10.5px; }
+.supplier-cell > span { width: 28px; height: 28px; font-size: 9.5px; }
+.table-footer,
+.table-footer button { font-size: var(--text-xs); }
+.modal > header p,
+.mini-dropzone span { font-size: var(--text-xs); }
+.modal__body > label,
+.mini-dropzone strong { font-size: var(--text-md); }
+
+/* Detalhe e rastreabilidade documental */
+.back-link,
+.document-detail-actions .button,
+.document-pipeline__stage strong,
+.document-tabs button,
+.source-entry strong,
+.consolidation-note strong,
+.archive-success strong,
+.archive-card dd,
+.archive-card .button,
+.security-note strong,
+.processing-event strong,
+.files-panel strong,
+.processing-summary__grid strong { font-size: var(--text-sm); }
+
+.document-detail-eyebrow,
+.document-pipeline__stage small,
+.info-card dt,
+.archive-card dt,
+.source-entry p,
+.source-auto,
+.consolidation-note p,
+.archive-card__head p,
+.archive-success span,
+.security-note p,
+.processing-result p,
+.processing-result small,
+.files-panel small,
+.processing-summary__grid span { font-size: var(--text-caption); }
+
+.document-detail-title p,
+.source-entry__icon,
+.processing-event time,
+.trace-id { font-size: var(--text-xs); }
+.info-card__title h2 { font-size: var(--text-base); }
+.info-card dd { font-size: var(--text-sm); }
+.processing-result strong { font-size: var(--text-md); }
+
+/* Pendências e resolução */
+.pendency-metrics .metric-card__value { font-size: 26px; }
+.completion-banner strong,
+.completion-banner div button,
+.pendency-filters input,
+.rules-toolbar input,
+.pendency-filters > button,
+.rules-toolbar > button,
+.pendency-table .button,
+.resolution-drawer header p,
+.reason-alert strong,
+.found-data dd,
+.automation-check strong { font-size: var(--text-sm); }
+
+.completion-banner p,
+.drawer-eyebrow,
+.reason-alert p,
+.found-data dt,
+.automation-check p,
+.rule-preview__head em,
+.rule-logic p { font-size: var(--text-caption); }
+
+.section-title h3,
+.field-label { font-size: var(--text-md); }
+.rule-preview__head span { font-size: 11.5px; }
+.rule-logic > span { font-size: 10px; }
+
+/* Regras */
+.rules-overview strong,
+.rule-builder__section h2 { font-size: var(--text-md); }
+.rules-overview p,
+.rules-overview span,
+.rules-toolbar > p,
+.rules-table td small,
+.result-grid label,
+.rule-builder__section > div > p,
+.rule-simulator__head p,
+.simulator-flow small,
+.rule-simulator > p { font-size: var(--text-xs); }
+.rules-table td > strong,
+.category-arrow,
+.rule-simulator__head h3,
+.simulator-flow > span,
+.simulator-flow > div,
+.simulator-flow strong { font-size: var(--text-sm); }
+.priority-cell span,
+.builder-step { font-size: var(--text-xs); }
+.condition-chips span,
+.and-chip { font-size: var(--text-caption); }
+.condition-row select,
+.condition-row input,
+.result-grid select { font-size: var(--text-md); }
+
+/* Integrações */
+.integration-global-health,
+.audit-protected { font-size: 11.5px; }
+.integration-card__logo { font-size: var(--text-xs); }
+.integration-card__title h2 { font-size: 16px; }
+.integration-card__stats span,
+.integration-card__detail,
+.health-panel p,
+.health-checks p,
+.mini-activity p { font-size: var(--text-caption); }
+.integration-card__stats strong { font-size: 14px; }
+.integration-card__detail { height: 34px; }
+.integration-card > .button,
+.integration-activity strong,
+.integration-activity p,
+.health-panel strong,
+.health-checks strong { font-size: var(--text-sm); }
+.integration-drawer__body > h3 { font-size: var(--text-md); }
+
+/* Fornecedores, auditoria e configurações */
+.secondary-toolbar input,
+.secondary-toolbar button,
+.supplier-name strong,
+.modal__body label,
+.audit-list p,
+.audit-list a { font-size: var(--text-sm); }
+.supplier-name span,
+.audit-actor > span { font-size: 10px; }
+.row-menu button,
+.audit-filters button,
+.audit-head,
+.audit-list time span,
+.settings-card header p,
+.settings-card label,
+.settings-card .button { font-size: var(--text-xs); }
+.audit-actor strong { font-size: var(--text-sm); }
+.settings-card input { font-size: var(--text-md); }
+
+/* Portal do Fornecedor */
+.supplier-dashboard .metric-card__value { font-size: 26px; }
+.supplier-attention strong,
+.supplier-recent .card__header > button,
+.supplier-help strong,
+.supplier-dropzone > p,
+.loaded-file strong,
+.complementary-info label,
+.extracted-card dd,
+.upload-success > p,
+.success-file strong,
+.duplicate-document strong,
+.duplicate-modal dd,
+.supplier-pendency-summary strong,
+.supplier-pendency-list strong,
+.company-profile dd,
+.company-contact a { font-size: var(--text-sm); }
+
+.supplier-attention p,
+.supplier-attention .button,
+.supplier-help p,
+.supplier-help .button,
+.supplier-dropzone > small,
+.loaded-file p,
+.complementary-info > p,
+.extracted-card header p,
+.extracted-card header b,
+.extracted-card dt,
+.upload-security p,
+.success-file span,
+.duplicate-info p,
+.duplicate-document small,
+.duplicate-modal dt,
+.duplicate-note,
+.supplier-pendency-summary p,
+.supplier-pendency-list p,
+.supplier-pendency-list small,
+.company-profile header p,
+.company-profile dt,
+.company-security p,
+.company-contact p,
+.company-security strong { font-size: var(--text-caption); }
+
+.supplier-dropzone h2 { font-size: 16px; }
+.complementary-info input,
+.complementary-info textarea { font-size: var(--text-md); }
+.extracted-card header h2,
+.company-contact h2 { font-size: var(--text-md); }
+.duplicate-demo,
+.dedupe-flow span,
+.dedupe-flow strong { font-size: var(--text-xs); }
+.success-file b { font-size: 10px; }
+.company-security h2 { font-size: 14px; }
+
+/* Contraste dos textos auxiliares preservado na escala ampliada. */
+.topbar__search kbd { color: #475467; }
