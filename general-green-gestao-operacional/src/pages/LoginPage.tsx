@@ -1,4 +1,4 @@
-import { BarChart3, CheckCircle2, ClipboardCheck, Eye, FileText, Leaf, LocateFixed, LockKeyhole, Mail, MapPin, Smartphone, Sun, Workflow } from 'lucide-react';
+import { BarChart3, CheckCircle2, ClipboardCheck, Eye, FileText, Leaf, LocateFixed, LockKeyhole, Mail, MapPin, Smartphone, Workflow } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Brand } from '../components/ui/Brand';
 import { Button } from '../components/ui/Button';
@@ -30,8 +30,6 @@ export function LoginPage() {
         </div>
       </section>
       <section className="login-visual">
-        <div className="login-visual__grid" />
-        <div className="login-visual__solar"><Sun /><span /><span /><span /></div>
         <div className="login-visual__heading"><span>OPERAÇÃO CONECTADA</span><h2>Do planejamento à comprovação em campo.</h2><p>Uma visão única para controlar equipes, produtividade, evidências e resultados.</p></div>
         <div className="login-flow">
           {flow.map(({ label, caption, icon: Icon }, index) => <div className="login-flow__item" key={label}><span><Icon size={21} /></span><div><strong>{label}</strong><small>{caption}</small></div>{index < flow.length - 1 && <i />}</div>)}

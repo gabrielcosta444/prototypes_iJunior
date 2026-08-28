@@ -1,17 +1,10 @@
-import { AlertTriangle, ArrowRight, CalendarDays, CheckCircle2, ClipboardList, Gauge, MapPinned, Plus, RefreshCcw, Target, Tractor, UsersRound } from 'lucide-react';
+import { AlertTriangle, ArrowRight, CalendarDays, ClipboardList, Gauge, MapPinned, Plus, RefreshCcw, Target, Tractor, UsersRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { MetricCard } from '../../components/ui/MetricCard';
 import { PageHeader } from '../../components/ui/PageHeader';
 import { StatusBadge } from '../../components/ui/StatusBadge';
 import { orders, productionSeries, projects } from '../../data/mockData';
-
-const pipeline = [
-  { label: 'Programadas', value: 12, icon: CalendarDays, tone: 'neutral' },
-  { label: 'Em campo', value: 8, icon: Tractor, tone: 'blue' },
-  { label: 'Em revisão', value: 5, icon: ClipboardList, tone: 'orange' },
-  { label: 'Concluídas', value: 94, icon: CheckCircle2, tone: 'green' },
-];
 
 export function DashboardPage() {
   return (
@@ -41,8 +34,8 @@ export function DashboardPage() {
                 <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fill: '#7b8b83', fontSize: 11 }} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fill: '#7b8b83', fontSize: 11 }} />
                 <Tooltip contentStyle={{ border: '1px solid #dfe7e1', borderRadius: 10, boxShadow: '0 8px 24px rgba(12,42,29,.08)', fontSize: 12 }} />
-                <Area type="monotone" dataKey="planned" name="Planejado" stroke="#a8b4ae" strokeDasharray="5 5" fill="transparent" strokeWidth={2} />
-                <Area type="monotone" dataKey="actual" name="Realizado" stroke="#168c43" fill="url(#productionFill)" strokeWidth={2.5} />
+                <Area isAnimationActive={false} type="monotone" dataKey="planned" name="Planejado" stroke="#a8b4ae" strokeDasharray="5 5" fill="transparent" strokeWidth={2} />
+                <Area isAnimationActive={false} type="monotone" dataKey="actual" name="Realizado" stroke="#168c43" fill="url(#productionFill)" strokeWidth={2.5} />
               </AreaChart>
             </ResponsiveContainer>
           </div>
@@ -58,13 +51,6 @@ export function DashboardPage() {
           <div className="project-highlight__stats"><span><small>Produção</small><strong>{projects[0].production}</strong></span><span><small>Meta</small><strong>{projects[0].target}</strong></span><span><small>OS emitidas</small><strong>{projects[0].orders}</strong></span></div>
           <Link to="/admin/projects/sol-do-cerrado">Ver detalhes do projeto <ArrowRight size={15} /></Link>
         </article>
-      </section>
-
-      <section className="panel operation-overview">
-        <div className="panel__header"><div><h2>Fluxo operacional</h2><p>Da programação à comprovação do serviço</p></div><Link to="/admin/operations">Abrir operações <ArrowRight size={15} /></Link></div>
-        <div className="pipeline">
-          {pipeline.map(({ label, value, icon: Icon, tone }, index) => <div className={`pipeline__item pipeline__item--${tone}`} key={label}><span><Icon size={20} /></span><div><strong>{value}</strong><small>{label}</small></div>{index < pipeline.length - 1 && <ArrowRight className="pipeline__arrow" size={17} />}</div>)}
-        </div>
       </section>
 
       <section className="dashboard-grid dashboard-grid--lower">

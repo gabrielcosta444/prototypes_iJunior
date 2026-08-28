@@ -1,0 +1,780 @@
+/*
+ * Camada visual corporativa simplificada.
+ * Mantém os fluxos do protótipo e aproxima os três ambientes da linguagem
+ * de um sistema interno: superfícies planas, tipografia legível e pouca ornamentação.
+ */
+
+body {
+  line-height: 1.4;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  transition: background-color .12s ease, border-color .12s ease, color .12s ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(22, 140, 67, .35);
+  outline-offset: 2px;
+}
+
+.brand {
+  gap: 11px;
+}
+
+.brand__mark,
+.brand--compact .brand__mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  clip-path: none;
+  background: var(--gg-green-600);
+  color: #fff;
+}
+
+.brand__wordmark {
+  line-height: .95;
+  font-size: 1rem;
+  letter-spacing: -.015em;
+}
+
+.brand__wordmark strong:last-child {
+  color: var(--gg-green-700);
+}
+
+.brand--light .brand__mark {
+  color: var(--gg-green-950);
+  background: var(--gg-green-500);
+}
+
+.brand--light .brand__wordmark strong:last-child {
+  color: #8ff084;
+}
+
+.button,
+.select-button,
+.filter-button,
+.environment-link,
+.mobile-primary-button {
+  min-height: 42px;
+  border-radius: 4px;
+  font-size: .82rem;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.button:hover,
+.metric-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.button--primary,
+.mobile-primary-button {
+  background: var(--gg-green-700);
+}
+
+.button--primary:hover,
+.mobile-primary-button:hover {
+  background: var(--gg-green-800);
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+.input-shell,
+.search-box,
+.form-grid input,
+.form-grid select,
+.form-grid textarea,
+.mobile-field textarea,
+.manager-note textarea,
+.return-form textarea {
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.input-shell {
+  min-height: 44px;
+}
+
+.input-shell:focus-within,
+.form-grid input:focus,
+.form-grid select:focus,
+.form-grid textarea:focus {
+  box-shadow: 0 0 0 2px rgba(22, 140, 67, .10);
+}
+
+.status-badge,
+.trend-positive,
+.client-approved,
+.live-dot {
+  border-radius: 12px;
+}
+
+.panel,
+.metric-card,
+.project-card,
+.client-metrics article,
+.metrics-simple article,
+.order-summary-strip,
+.order-pipeline,
+.mobile-order-card,
+.mobile-card,
+.mobile-detail-card,
+.mobile-instructions,
+.mobile-quick-grid a,
+.mobile-next article,
+.mobile-checklist,
+.sync-queue,
+.mobile-review-summary,
+.correction-card {
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.panel {
+  padding: 20px;
+}
+
+.panel__header {
+  margin-bottom: 18px;
+}
+
+.panel__header h2 {
+  font-size: .98rem;
+  font-weight: 650;
+}
+
+.panel__header p,
+.panel__header > a,
+.panel__header > span {
+  font-size: .75rem;
+}
+
+.eyebrow {
+  letter-spacing: .075em;
+  font-size: .7rem;
+}
+
+/* Ambiente administrativo */
+.admin-layout {
+  grid-template-columns: 232px minmax(0, 1fr);
+}
+
+.sidebar {
+  width: 232px;
+  padding: 16px 12px 14px;
+  background: var(--gg-green-950);
+}
+
+.sidebar__brand {
+  min-height: 56px;
+  padding: 2px 8px 16px;
+}
+
+.sidebar__context {
+  margin: 0 4px 12px;
+  padding: 9px 10px;
+  border-radius: 4px;
+  font-size: .65rem;
+  letter-spacing: .055em;
+}
+
+.sidebar__nav {
+  gap: 2px;
+}
+
+.sidebar__nav a {
+  min-height: 43px;
+  gap: 10px;
+  padding: 0 11px;
+  border-radius: 4px;
+  font-size: .78rem;
+}
+
+.sidebar__nav a.active {
+  background: var(--gg-green-700);
+  box-shadow: inset 3px 0 #8ff084;
+}
+
+.sidebar__profile {
+  padding: 14px 5px 2px;
+}
+
+.sidebar__profile strong {
+  font-size: .72rem;
+}
+
+.sidebar__profile small {
+  font-size: .62rem;
+}
+
+.avatar {
+  border-radius: 4px;
+}
+
+.topbar {
+  height: 64px;
+  padding: 0 28px;
+  background: #fff;
+  backdrop-filter: none;
+}
+
+.topbar__breadcrumb,
+.environment-link {
+  font-size: .72rem;
+}
+
+.environment-link {
+  padding: 0 12px;
+}
+
+.page-content {
+  padding: 26px 28px 40px;
+}
+
+.page-header {
+  margin-bottom: 22px;
+}
+
+.page-header h1 {
+  margin-bottom: 5px;
+}
+
+.page-header p {
+  font-size: .84rem;
+}
+
+.metrics-grid {
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.metric-card {
+  padding: 17px;
+  gap: 13px;
+}
+
+.metric-card:hover {
+  border-color: var(--border-strong);
+}
+
+.metric-card__icon,
+.form-card__heading > span,
+.project-card header > span:first-child,
+.template-card header > span,
+.team-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+.metric-card__body > span {
+  font-size: .75rem;
+}
+
+.metric-card__body > strong {
+  font-size: 1.55rem;
+  letter-spacing: -.025em;
+}
+
+.metric-card__body small,
+.admin-main small {
+  font-size: .68rem;
+}
+
+.dashboard-grid {
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.project-highlight {
+  background: #fff;
+}
+
+.project-highlight::after {
+  display: none;
+}
+
+.project-highlight__client {
+  font-size: .65rem;
+}
+
+.project-highlight > p,
+.progress-heading,
+.project-highlight > a {
+  font-size: .72rem;
+}
+
+.project-highlight__stats span,
+.order-symbol,
+.attention-icon,
+.info-grid > div,
+.note,
+.weekly-total,
+.team-assignment,
+.template-tags span,
+.builder-ready,
+.success-modal > div,
+.emission-note,
+.review-grid > div {
+  border-radius: 4px;
+}
+
+.project-highlight__stats small,
+.compact-row small,
+.attention-list small {
+  font-size: .65rem;
+}
+
+.compact-row,
+.attention-list > a {
+  min-height: 61px;
+}
+
+.compact-row strong,
+.attention-list strong {
+  font-size: .75rem;
+}
+
+.compact-row:hover,
+.data-table tbody tr:hover {
+  background: #f4faf5;
+}
+
+.table-toolbar {
+  padding: 14px;
+}
+
+.search-box,
+.filter-button {
+  height: 42px;
+}
+
+.search-box input,
+.filter-button,
+.form-grid label,
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+  font-size: .75rem;
+}
+
+.data-table th {
+  height: 44px;
+  padding: 0 14px;
+  background: #f7f7f7;
+  color: #555;
+  font-size: .65rem;
+}
+
+.data-table td {
+  min-height: 58px;
+  padding: 14px;
+  font-size: .75rem;
+}
+
+.data-table td small,
+.table-footer {
+  font-size: .65rem;
+}
+
+.table-footer button,
+.row-actions button,
+.row-actions a {
+  border-radius: 4px;
+}
+
+.form-card__heading,
+.form-grid {
+  padding: 20px;
+}
+
+.check-card,
+.order-preview__map,
+.detail-hero,
+.location-preview {
+  border-radius: 4px;
+}
+
+.order-preview__map,
+.location-preview {
+  background: #f1f7f2;
+}
+
+.detail-hero,
+.order-pipeline {
+  box-shadow: none;
+}
+
+.order-pipeline > div > span,
+.order-pipeline .active > span {
+  box-shadow: none;
+}
+
+.settings-nav button,
+.editor-number,
+.builder-items span {
+  border-radius: 4px;
+}
+
+.settings-nav button.active {
+  background: #e9f5ec;
+}
+
+.kanban__lane,
+.kanban-card,
+.review-status,
+.evidence-card,
+.evidence-integrity,
+.map-canvas,
+.map-label,
+.return-form > span {
+  border-radius: 6px;
+}
+
+.kanban-card {
+  box-shadow: none;
+}
+
+.kanban-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--border-strong);
+}
+
+/* Acesso */
+.login-page {
+  grid-template-columns: minmax(440px, .9fr) minmax(620px, 1.1fr);
+}
+
+.login-panel {
+  padding: 30px clamp(38px, 5vw, 72px);
+}
+
+.login-panel__content {
+  width: min(420px, 100%);
+}
+
+.login-panel__content h1 {
+  font-size: 1.9rem;
+  margin: 14px 0 8px;
+}
+
+.login-panel__content > p {
+  font-size: .85rem;
+  margin-bottom: 26px;
+}
+
+.login-panel form {
+  gap: 16px;
+}
+
+.login-panel form > label,
+.login-options {
+  font-size: .75rem;
+}
+
+.login-security {
+  font-size: .65rem;
+}
+
+.login-visual {
+  padding: clamp(44px, 6vw, 82px);
+  background: var(--gg-green-950);
+}
+
+.login-visual__heading > span {
+  color: #8ff084;
+  font-size: .68rem;
+  letter-spacing: .09em;
+}
+
+.login-visual__heading h2 {
+  max-width: 610px;
+  margin: 16px 0 14px;
+  font-size: clamp(2rem, 3.2vw, 3.1rem);
+  line-height: 1.08;
+  letter-spacing: -.035em;
+}
+
+.login-visual__heading p {
+  font-size: .84rem;
+  line-height: 1.55;
+}
+
+.login-flow {
+  margin-top: 34px;
+  padding: 16px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, .04);
+}
+
+.login-flow__item > span {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+.login-flow__item strong {
+  font-size: .72rem;
+}
+
+.login-flow__item small {
+  font-size: .61rem;
+}
+
+.login-visual__chips span {
+  border-radius: 4px;
+  font-size: .62rem;
+}
+
+/* Portal do cliente */
+.client-layout {
+  background: var(--canvas);
+}
+
+.client-topbar {
+  height: 68px;
+  padding: 0 32px;
+}
+
+.client-topbar nav {
+  gap: 3px;
+}
+
+.client-topbar nav a {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 13px;
+  border-radius: 4px;
+  font-size: .76rem;
+}
+
+.client-topbar nav a.active {
+  color: #fff;
+  background: var(--gg-green-700);
+}
+
+.client-topbar__account strong {
+  font-size: .72rem;
+}
+
+.client-topbar__account small {
+  font-size: .62rem;
+}
+
+.client-content {
+  padding: 28px 32px 44px;
+}
+
+.client-metrics article {
+  padding: 16px;
+}
+
+.client-metrics article > span,
+.client-recent > article > span:first-child,
+.report-file-icon {
+  border-radius: 4px;
+}
+
+.client-metrics small,
+.client-layout small {
+  font-size: .66rem;
+}
+
+.client-metrics p,
+.client-recent small {
+  font-size: .65rem;
+}
+
+.client-metrics strong {
+  font-size: 1.2rem;
+}
+
+.client-project-card,
+.client-project-hero {
+  border-radius: 6px;
+  background: var(--gg-green-900);
+}
+
+.client-project-visual {
+  display: none;
+}
+
+.client-project-card > p,
+.client-project-card > a,
+.client-project-hero p,
+.client-recent strong,
+.client-milestones strong,
+.client-milestones b {
+  font-size: .7rem;
+}
+
+/* Aplicativo do técnico */
+.mobile-stage {
+  background: #ecefec;
+  padding: 22px;
+}
+
+.mobile-preview-tools {
+  max-width: 404px;
+  margin-bottom: 12px;
+  font-size: .68rem;
+}
+
+.mobile-device {
+  width: 390px;
+  height: 844px;
+  border: 4px solid #25312b;
+  border-radius: 20px;
+  background: #f5f5f5;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+  grid-template-rows: 60px 1fr 66px;
+}
+
+.mobile-topbar {
+  padding: 0 16px;
+}
+
+.mobile-content {
+  padding: 17px 16px 24px;
+}
+
+.mobile-bottom a {
+  font-size: .61rem;
+}
+
+.mobile-page h1 {
+  font-size: 1.35rem;
+}
+
+.mobile-subtitle {
+  font-size: .75rem;
+}
+
+.mobile-page small {
+  font-size: .61rem;
+  line-height: 1.35;
+}
+
+.mobile-order-card,
+.mobile-card,
+.mobile-detail-card,
+.mobile-instructions {
+  padding: 14px;
+}
+
+.mobile-order-card h2 {
+  font-size: .95rem;
+}
+
+.mobile-order-card > p,
+.mobile-back,
+.sync-page > p {
+  font-size: .7rem;
+}
+
+.mobile-primary-button {
+  min-height: 44px;
+}
+
+.mobile-offline-mini,
+.sync-callout,
+.mobile-quick-grid a,
+.mobile-next article,
+.mobile-plant > span,
+.mobile-info-grid span,
+.activity-timer,
+.activity-actions a,
+.checklist-progress,
+.mobile-checklist,
+.mobile-info-note,
+.mobile-field textarea,
+.measure-input,
+.weather-select button,
+.evidence-status,
+.mobile-evidence-list article,
+.mobile-location-card,
+.sync-queue,
+.sync-success > div,
+.mobile-review-summary,
+.mobile-review-ready,
+.correction-card,
+.evidence-fix {
+  border-radius: 4px;
+}
+
+.activity-timer {
+  background: var(--gg-green-900);
+}
+
+.mobile-checklist button.complete {
+  background: #f0f8f2;
+}
+
+.modal-backdrop {
+  backdrop-filter: none;
+}
+
+.modal,
+.toast {
+  border-radius: 6px;
+}
+
+@media (max-width: 1050px) {
+  .admin-layout {
+    grid-template-columns: 76px 1fr;
+  }
+
+  .sidebar {
+    width: 76px;
+  }
+
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 17px;
+  }
+
+  .page-content,
+  .client-content {
+    padding: 20px 16px 32px;
+  }
+
+  .client-topbar {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 470px) {
+  .mobile-stage {
+    padding: 0;
+    background: #f5f5f5;
+  }
+
+  .mobile-device {
+    width: 100%;
+    height: 100vh;
+    min-height: 720px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
