@@ -21,7 +21,7 @@ export function LoginPage() {
           <h1>Gestão de Operações</h1>
           <p>Controle, rastreabilidade e eficiência da operação em campo.</p>
           <form onSubmit={(event) => { event.preventDefault(); navigate('/admin/dashboard'); }}>
-            <label>E-mail<div className="input-shell"><Mail size={18} /><input defaultValue="lucas.martins@generalgreen.com.br" type="email" /></div></label>
+            <label>E-mail<div className="input-shell"><Mail size={18} /><input defaultValue="tiago.oliveira@generalgreen.com.br" type="email" /></div></label>
             <label>Senha<div className="input-shell"><LockKeyhole size={18} /><input defaultValue="generalgreen" type="password" /></div></label>
             <div className="login-options"><label className="check-label"><input type="checkbox" defaultChecked /> Lembrar acesso</label><button type="button">Esqueci minha senha</button></div>
             <Button block type="submit">Entrar</Button>

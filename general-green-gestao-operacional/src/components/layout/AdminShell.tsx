@@ -34,7 +34,7 @@ export function AdminShell({ children }: PropsWithChildren) {
         </nav>
         <div className="sidebar__profile">
           <span className="avatar">LM</span>
-          <span><strong>Lucas Martins</strong><small>Gestor Operacional</small></span>
+          <span><strong>Tiago Oliveira</strong><small>Gestor Operacional</small></span>
           <LogOut size={18} />
         </div>
       </aside>
