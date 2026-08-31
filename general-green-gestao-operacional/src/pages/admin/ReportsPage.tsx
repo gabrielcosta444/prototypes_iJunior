@@ -70,7 +70,6 @@ export function ReportsPage() {
         <section className="panel report-library">
           <header className="report-section-header">
             <div><h2>Biblioteca de relatórios</h2><p>Versões geradas a partir de atividades revisadas e aprovadas.</p></div>
-            <span><CheckCircle2 size={15} /> Histórico preservado</span>
           </header>
 
           <div className="report-toolbar">
