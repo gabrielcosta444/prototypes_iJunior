@@ -1,4 +1,4 @@
-import type { ChecklistItem, Evidence, Order, Project, Report, Team, TimelineEntry } from '../domain/types';
+import type { ChecklistItem, Evidence, Order, Project, Report, ReportTemplate, Team, TimelineEntry } from '../domain/types';
 
 export const orders: Order[] = [
   { id: '2026-0148', client: 'Solaris Energia', plant: 'UFV Sol do Cerrado', service: 'Roçagem', date: '26/08/2026', team: 'Equipe Norte', progress: 65, status: 'em-execucao', production: '11,7 ha', target: '18 ha' },
@@ -40,9 +40,16 @@ export const evidences: Evidence[] = [
 ];
 
 export const reports: Report[] = [
-  { id: '238', client: 'Solaris Energia', project: 'Roçagem — Sol do Cerrado', period: '26/08/2026', status: 'disponivel', generatedAt: '26/08/2026 — 17:48' },
-  { id: '237', client: 'Lumina Power', project: 'Lavagem — Serra Azul', period: '26/08/2026', status: 'rascunho', generatedAt: '26/08/2026 — 17:12' },
-  { id: '236', client: 'Atlas Renewables', project: 'Roçagem — Horizonte', period: '25/08/2026', status: 'disponivel', generatedAt: '25/08/2026 — 18:04' },
+  { id: '238', client: 'Solaris Energia', plant: 'UFV Sol do Cerrado', project: 'Contrato O&M — Sol do Cerrado', service: 'Roçagem', period: '01–26/08/2026', status: 'disponibilizado', templateId: 'rocagem-om', template: 'Roçagem O&M', version: 3, activityCount: 12, publishedBy: 'Lucas Martins', generatedAt: '26/08/2026 — 17:48', publishedAt: '26/08/2026 — 18:02', channels: ['Portal', 'E-mail'] },
+  { id: '237', client: 'Lumina Power', plant: 'UFV Serra Azul', project: 'Lavagem Preventiva — Serra Azul', service: 'Lavagem de módulos', period: '26/08/2026', status: 'rascunho', templateId: 'lavagem-modulos', template: 'Lavagem de Módulos', version: 1, activityCount: 1, generatedAt: '26/08/2026 — 17:12', channels: [] },
+  { id: '236', client: 'Atlas Renewables', plant: 'UFV Horizonte', project: 'Manutenção de Vegetação — Horizonte', service: 'Roçagem', period: '18–25/08/2026', status: 'gerado', templateId: 'rocagem-om', template: 'Roçagem O&M', version: 2, activityCount: 6, generatedAt: '25/08/2026 — 18:04', channels: [] },
+  { id: '235', client: 'Solaris Energia', plant: 'UFV Boa Vista', project: 'Contrato O&M — Boa Vista', service: 'Roçagem', period: '18–24/08/2026', status: 'gerado', templateId: 'diario-compacto', template: 'Diário Compacto', version: 1, activityCount: 5, generatedAt: '25/08/2026 — 09:20', channels: [] },
+];
+
+export const reportTemplates: ReportTemplate[] = [
+  { id: 'rocagem-om', name: 'Roçagem O&M', description: 'Consolida avanço físico, produção diária, equipe e evidências de roçagem.', service: 'Roçagem', scope: 'Solaris Energia · 3 projetos', components: ['Identificação', 'Resumo executivo', 'Avanço físico', 'Produção diária', 'Equipe', 'Horários', 'Clima', 'Evidências', 'Observações', 'Validação'], projects: 3, updatedAt: '24/08/2026', isDefault: true },
+  { id: 'lavagem-modulos', name: 'Lavagem de Módulos', description: 'Apresenta módulos lavados, meta, produtividade, checklist e registros fotográficos.', service: 'Lavagem de módulos', scope: 'Lumina Power · 2 projetos', components: ['Identificação', 'Resumo executivo', 'Produção e meta', 'Equipe', 'Horários', 'Clima', 'Checklist', 'Evidências', 'Validação'], projects: 2, updatedAt: '22/08/2026', isDefault: true },
+  { id: 'diario-compacto', name: 'Diário Compacto', description: 'Versão objetiva para uma única atividade aprovada e distribuição rápida.', service: 'Multisserviço', scope: 'Todos os clientes', components: ['Identificação', 'Produção', 'Equipe', 'Evidências', 'Observações', 'Validação'], projects: 8, updatedAt: '18/08/2026' },
 ];
 
 export const historyEntries: TimelineEntry[] = [

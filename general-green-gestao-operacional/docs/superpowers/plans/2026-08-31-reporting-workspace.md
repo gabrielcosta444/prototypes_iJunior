@@ -30,7 +30,7 @@
 **Interfaces:**
 - Produces: `Report`, `ReportTemplate`, `ReportStatus`, `reportTemplates` e registros de relatório enriquecidos.
 
-- [ ] Escrever um teste de página que exija modelo, versão, aprovação e status de publicação.
+- [ ] Escrever um teste de página que exija modelo, versão e rastreabilidade da publicação, sem uma aprovação separada do relatório.
 - [ ] Executar o teste e confirmar falha porque os dados ainda não existem.
 - [ ] Estender os tipos e os fixtures com os campos exigidos pela central.
 - [ ] Adicionar a referência `vite/client` para imports de CSS reconhecidos pelo editor.
@@ -80,7 +80,7 @@
 
 **Interfaces:**
 - Consumes: dados aprovados e evidências simuladas.
-- Produces: prévia operacional completa e biblioteca de documentos aprovados no portal.
+- Produces: prévia operacional completa e biblioteca de documentos disponibilizados no portal.
 
 - [ ] Escrever testes para os blocos essenciais da prévia e para o histórico do cliente.
 - [ ] Executar e observar a ausência dos novos elementos.
@@ -99,4 +99,3 @@
 - [ ] Iniciar o Vite e verificar `/admin/reports`, `/admin/reports/new`, `/admin/reports/preview` e `/client/reports` em navegador.
 - [ ] Verificar responsividade, ausência de overlay de erro e interações principais.
 - [ ] Revisar o diff final para garantir que não há alterações fora do módulo.
-

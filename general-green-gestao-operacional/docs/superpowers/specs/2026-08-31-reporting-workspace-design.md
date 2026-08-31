@@ -8,13 +8,13 @@ Transformar a seção de relatórios em uma central de trabalho que permita ao g
 
 - Evoluir a listagem administrativa para uma central com as abas `Relatórios` e `Modelos`.
 - Permitir busca e filtros por cliente, projeto e status.
-- Exibir estados operacionais, versão, modelo, responsável e canal de disponibilização.
+- Exibir somente os estados `Rascunho`, `Gerado` e `Disponibilizado`, agrupando modelo e versão e registrando quem publicou o documento.
 - Criar um fluxo guiado de geração: origem, modelo, conteúdo, conferência e distribuição.
 - Permitir ativar, ocultar e reorganizar blocos controlados pela plataforma.
 - Reutilizar modelos associados a cliente, projeto ou tipo de serviço.
 - Apresentar prévia com identificação, indicadores, produção diária, equipe, clima, evidências, observações, localização e validação.
 - Representar a geração do PDF, a disponibilização no portal e o envio por e-mail como ações do protótipo.
-- Melhorar a consulta de relatórios aprovados no portal do cliente.
+- Melhorar a consulta de relatórios disponibilizados no portal do cliente.
 
 ## Limites
 
@@ -32,11 +32,10 @@ Os tipos e dados simulados ficam centralizados em `src/domain/types.ts` e `src/d
 
 1. A central permite alternar entre relatórios e modelos.
 2. A busca e os filtros reduzem os relatórios visíveis.
-3. A listagem exibe status, versão, modelo, aprovação e disponibilização.
+3. A listagem usa no máximo seis colunas e exibe status, versão, modelo e dados da publicação, sem criar uma aprovação separada do relatório.
 4. O construtor apresenta as cinco etapas e impede avançar sem origem válida.
 5. O gestor consegue selecionar um modelo, ligar/desligar blocos e alterar a ordem dos blocos permitidos.
 6. A conferência informa que os dados vieram de atividades aprovadas e sinaliza a integridade da composição.
 7. A prévia representa os principais blocos do relatório real de roçagem/lavagem.
-8. O portal do cliente permite buscar, filtrar, visualizar e baixar apenas documentos aprovados.
+8. O portal do cliente permite buscar, filtrar, visualizar e baixar apenas documentos disponibilizados.
 9. A interface permanece utilizável em larguras menores.
-

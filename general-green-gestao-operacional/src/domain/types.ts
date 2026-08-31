@@ -60,13 +60,36 @@ export type Evidence = {
   image: string;
 };
 
+export type ReportStatus = 'rascunho' | 'gerado' | 'disponibilizado';
+
 export type Report = {
   id: string;
   client: string;
+  plant: string;
   project: string;
+  service: string;
   period: string;
-  status: 'disponivel' | 'rascunho';
+  status: ReportStatus;
+  templateId: string;
+  template: string;
+  version: number;
+  activityCount: number;
+  publishedBy?: string;
   generatedAt: string;
+  publishedAt?: string;
+  channels: Array<'Portal' | 'E-mail'>;
+};
+
+export type ReportTemplate = {
+  id: string;
+  name: string;
+  description: string;
+  service: string;
+  scope: string;
+  components: string[];
+  projects: number;
+  updatedAt: string;
+  isDefault?: boolean;
 };
 
 export type TimelineEntry = {
