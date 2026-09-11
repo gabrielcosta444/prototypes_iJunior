@@ -1,4 +1,4 @@
-import { Bell, BookOpenCheck, Building2, ClipboardList, FileBarChart, History, LayoutDashboard, LogOut, Settings, ShieldCheck, Users, UsersRound, Workflow } from 'lucide-react';
+import { Bell, BookOpenCheck, Building2, ClipboardList, FileBarChart, History, LayoutDashboard, LogOut, Map, Settings, ShieldCheck, Users, UsersRound, Workflow } from 'lucide-react';
 import type { PropsWithChildren } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Brand } from '../ui/Brand';
@@ -13,6 +13,7 @@ const primary = [
   ['/admin/teams', 'Equipes', UsersRound],
   ['/admin/checklists', 'Checklists', BookOpenCheck],
   ['/admin/reports', 'Relatórios', FileBarChart],
+  ['/admin/plants', 'Plantas e Mapas', Map],
   ['/admin/history', 'Histórico', History],
 ] as const;
 

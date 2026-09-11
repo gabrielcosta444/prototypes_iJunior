@@ -14,6 +14,7 @@ test.each([
   ['/login', 'Gestão de Operações'],
   ['/admin/dashboard', 'Visão Geral'],
   ['/admin/orders', 'Ordens de Serviço'],
+  ['/admin/plants', 'Plantas e Mapas'],
   ['/mobile', 'Bom dia, Carlos'],
   ['/client/dashboard', 'Visão Geral'],
 ])('renderiza a experiência correta em %s', async (path, heading) => {

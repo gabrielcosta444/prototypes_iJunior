@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 import { AdminShell } from '../components/layout/AdminShell';
 import { ClientShell } from '../components/layout/ClientShell';
 import { MobileShell } from '../components/layout/MobileShell';
@@ -21,6 +22,7 @@ import { UsersPage } from '../pages/admin/UsersPage';
 import { ReportBuilderPage } from '../pages/admin/ReportBuilderPage';
 import { ReportPreviewPage } from '../pages/admin/ReportPreviewPage';
 import { ReportsPage } from '../pages/admin/ReportsPage';
+import { PlantsPage } from '../pages/admin/PlantsPage';
 import { ClientDashboardPage } from '../pages/client/ClientDashboardPage';
 import { ClientProjectPage } from '../pages/client/ClientProjectPage';
 import { ClientReportsPage } from '../pages/client/ClientReportsPage';
@@ -34,6 +36,9 @@ import { MobileReturnedPage } from '../pages/mobile/MobileReturnedPage';
 import { MobileReviewPage } from '../pages/mobile/MobileReviewPage';
 import { MobileSyncPage } from '../pages/mobile/MobileSyncPage';
 import { PrototypeProvider } from './PrototypeContext';
+import { PlantsProvider } from '../features/plants/PlantsContext';
+
+const PlantEditorPage = lazy(() => import('../pages/admin/PlantEditorPage').then((module) => ({ default: module.PlantEditorPage })));
 
 function RouteScaffold({ title, eyebrow }: { title: string; eyebrow?: string }) {
   return (
@@ -51,6 +56,7 @@ const client = (title: string, eyebrow?: string) => <ClientShell><RouteScaffold 
 export function App() {
   return (
     <PrototypeProvider>
+      <PlantsProvider>
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<LoginPage />} />
@@ -67,6 +73,8 @@ export function App() {
         <Route path="/admin/checklists" element={<AdminShell><ChecklistsPage /></AdminShell>} />
         <Route path="/admin/checklists/:id" element={<AdminShell><ChecklistEditorPage /></AdminShell>} />
         <Route path="/admin/reports" element={<AdminShell><ReportsPage /></AdminShell>} />
+        <Route path="/admin/plants" element={<AdminShell><PlantsPage /></AdminShell>} />
+        <Route path="/admin/plants/:id" element={<AdminShell><Suspense fallback={<div className="route-loading">Preparando editor da planta…</div>}><PlantEditorPage /></Suspense></AdminShell>} />
         <Route path="/admin/reports/new" element={<AdminShell><ReportBuilderPage /></AdminShell>} />
         <Route path="/admin/reports/preview" element={<ReportPreviewPage />} />
         <Route path="/admin/history" element={<AdminShell><HistoryPage /></AdminShell>} />
@@ -87,6 +95,7 @@ export function App() {
         <Route path="/client/reports" element={<ClientShell><ClientReportsPage /></ClientShell>} />
         <Route path="*" element={<RouteScaffold title="Página não encontrada" />} />
       </Routes>
+      </PlantsProvider>
     </PrototypeProvider>
   );
 }
