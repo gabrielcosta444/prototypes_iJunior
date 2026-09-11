@@ -456,88 +456,20 @@ textarea:focus-visible {
 
 /* Acesso */
 .login-page {
-  grid-template-columns: minmax(440px, .9fr) minmax(620px, 1.1fr);
+  background: var(--canvas);
 }
 
-.login-panel {
-  padding: 30px clamp(38px, 5vw, 72px);
+.login-card {
+  border-radius: 6px;
 }
 
-.login-panel__content {
-  width: min(420px, 100%);
-}
-
-.login-panel__content h1 {
-  font-size: 1.9rem;
-  margin: 14px 0 8px;
-}
-
-.login-panel__content > p {
-  font-size: .85rem;
-  margin-bottom: 26px;
-}
-
-.login-panel form {
+.login-card form {
   gap: 16px;
 }
 
-.login-panel form > label,
+.login-card form > label,
 .login-options {
   font-size: .75rem;
-}
-
-.login-security {
-  font-size: .65rem;
-}
-
-.login-visual {
-  padding: clamp(44px, 6vw, 82px);
-  background: var(--gg-green-950);
-}
-
-.login-visual__heading > span {
-  color: #8ff084;
-  font-size: .68rem;
-  letter-spacing: .09em;
-}
-
-.login-visual__heading h2 {
-  max-width: 610px;
-  margin: 16px 0 14px;
-  font-size: clamp(2rem, 3.2vw, 3.1rem);
-  line-height: 1.08;
-  letter-spacing: -.035em;
-}
-
-.login-visual__heading p {
-  font-size: .84rem;
-  line-height: 1.55;
-}
-
-.login-flow {
-  margin-top: 34px;
-  padding: 16px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, .04);
-}
-
-.login-flow__item > span {
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-}
-
-.login-flow__item strong {
-  font-size: .72rem;
-}
-
-.login-flow__item small {
-  font-size: .61rem;
-}
-
-.login-visual__chips span {
-  border-radius: 4px;
-  font-size: .62rem;
 }
 
 /* Portal do cliente */
@@ -743,9 +675,6 @@ textarea:focus-visible {
     width: 76px;
   }
 
-  .login-page {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 700px) {

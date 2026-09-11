@@ -11,7 +11,7 @@ function renderAt(path: string) {
 }
 
 test.each([
-  ['/login', 'Gestão de Operações'],
+  ['/login', 'Acessar sua conta'],
   ['/admin/dashboard', 'Visão Geral'],
   ['/admin/orders', 'Ordens de Serviço'],
   ['/admin/plants', 'Plantas e Mapas'],
