@@ -1,0 +1,26 @@
+:root {
+  --purple: #9209cc;
+  --purple-dark: #5d087f;
+  --orange: #ff5500;
+  --green: #33c136;
+  --blue: #4b7ee2;
+  --red: #e02727;
+  --cream: #efe8da;
+  --cream-light: #fffaf0;
+  --ink: #24162b;
+  --white: #fffdf8;
+  --outline: 2px solid var(--ink);
+  --shadow-sm: 4px 4px 0 var(--ink);
+  --shadow-md: 8px 8px 0 var(--ink);
+  --radius-sm: 14px;
+  --radius-md: 24px;
+  --radius-lg: 40px;
+  --container: min(1180px, calc(100vw - 48px));
+  --display: "Arial Rounded MT Bold", "Trebuchet MS", Arial, sans-serif;
+  --body: Montserrat, "Avenir Next", Avenir, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: var(--body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
