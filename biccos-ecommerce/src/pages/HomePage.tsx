@@ -22,7 +22,7 @@ export function HomePage() {
         <img className="home-hero__floating-symbol" src="/assets/biccos-symbol-light.svg" alt="" aria-hidden="true" />
         <div className="container home-hero__grid">
           <div className="home-hero__copy" data-reveal>
-            <span className="hero-pill"><Sparkles size={15} /> Feito de grão-de-bico</span>
+            
             <h1>O 1º salgadinho proteico <em>100% natural.</em></h1>
             <p>Grão-de-bico assado com azeite e temperos. Um snack salgado, prático e com ingredientes simples.</p>
             <div className="home-hero__actions">
