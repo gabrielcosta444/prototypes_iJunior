@@ -7,7 +7,7 @@
   --red: #e02727;
   --cream: #efe8da;
   --cream-light: #fffaf0;
-  --ink: #24162b;
+  --ink: #171215;
   --white: #fffdf8;
   --outline: 2px solid var(--ink);
   --shadow-sm: 4px 4px 0 var(--ink);
@@ -16,8 +16,8 @@
   --radius-md: 24px;
   --radius-lg: 40px;
   --container: min(1180px, calc(100vw - 48px));
-  --display: "Arial Rounded MT Bold", "Trebuchet MS", Arial, sans-serif;
-  --body: Montserrat, "Avenir Next", Avenir, Arial, sans-serif;
+  --display: "Lilita One", "Arial Rounded MT Bold", sans-serif;
+  --body: "Montserrat Variable", Montserrat, Arial, sans-serif;
   color: var(--ink);
   background: var(--cream);
   font-family: var(--body);

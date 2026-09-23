@@ -7,7 +7,7 @@ import { Rating } from './Rating'
 
 const currency = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
 
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({ product, motionIndex = 0 }: { product: Product; motionIndex?: number }) {
   const { addItem } = useShop()
   const [added, setAdded] = useState(false)
 
@@ -17,7 +17,11 @@ export function ProductCard({ product }: { product: Product }) {
   }
 
   return (
-    <article className={`product-card theme-${product.theme}`}>
+    <article
+      className={`product-card theme-${product.theme}`}
+      data-reveal
+      data-reveal-delay={(motionIndex % 3) + 1}
+    >
       <Link className="product-card__visual" to={`/produto/${product.slug}`} aria-label={`Ver ${product.name}`}>
         <div className="product-card__badges">
           {product.badges.slice(0, 2).map((badge) => <span className="badge" key={badge}>{badge}</span>)}

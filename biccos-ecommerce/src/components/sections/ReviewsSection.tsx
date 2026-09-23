@@ -3,12 +3,12 @@ import { Rating } from '../shop/Rating'
 
 export function ReviewsSection() {
   return (
-    <section className="reviews-section section">
+    <section className="reviews-section section" data-reveal>
       <div className="container">
         <div className="reviews-heading">
           <div>
-            <span className="section-kicker">Crocância aprovada</span>
-            <h2 className="section-title">Quem prova, faz <em>crec</em> e conta.</h2>
+            <span className="section-kicker">Avaliações</span>
+            <h2 className="section-title">A opinião de quem <em>já provou.</em></h2>
           </div>
           <div className="reviews-summary">
             <strong>4.9</strong>
@@ -18,7 +18,7 @@ export function ReviewsSection() {
         </div>
         <div className="reviews-grid">
           {reviews.map((review, index) => (
-            <article className={`review-card review-card--${index + 1}`} key={review.id}>
+            <article className={`review-card review-card--${index + 1}`} data-reveal data-reveal-delay={index + 1} key={review.id}>
               <div className="review-card__top"><Rating value={review.rating} /><span>“</span></div>
               <h3>{review.title}</h3>
               <p>{review.body}</p>

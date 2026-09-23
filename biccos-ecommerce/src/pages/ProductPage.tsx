@@ -32,7 +32,7 @@ export function ProductPage() {
 
   return (
     <>
-      <section className={`product-detail theme-${product.theme}`}>
+      <section className={`product-detail theme-${product.theme}`} data-reveal>
         <div className="container product-detail__breadcrumbs">
           <Link to="/produtos"><ArrowLeft size={15} /> Produtos</Link><span>/</span><span>{product.flavor}</span>
         </div>
@@ -108,18 +108,18 @@ export function ProductPage() {
         </div>
       </section>
 
-      <section className="product-facts-strip">
+      <section className="product-facts-strip" data-reveal>
         <div className="container">
           {product.facts.map((fact, index) => <div key={fact.label}><span>0{index + 1}</span><strong>{fact.value}</strong><p>{fact.label}</p></div>)}
         </div>
       </section>
 
-      <section className="product-story section">
+      <section className="product-story section" data-reveal>
         <div className="container product-story__grid">
           <div>
-            <span className="section-kicker">Abriu. Fez crec.</span>
-            <h2>Snack simples, presença gigante.</h2>
-            <p>Um ingrediente conhecido ganha outra textura quando encontra azeite, calor e uma boa mistura de temperos.</p>
+            <span className="section-kicker">Pronto para consumir</span>
+            <h2>Grão-de-bico assado e temperado.</h2>
+            <p>Uma receita direta, feita para entregar textura crocante e praticidade ao longo do dia.</p>
             <ul><li><Check /> pronto para comer</li><li><Check /> fácil de levar</li><li><Check /> cinco sabores</li></ul>
           </div>
           <div className="product-story__image"><img src="/assets/biccos-purple-pack.png" alt="Pacote Bicco's em destaque" /></div>
@@ -129,10 +129,10 @@ export function ProductPage() {
       <ComparisonTable />
       <ReviewsSection />
 
-      <section className="related-section section">
+      <section className="related-section section" data-reveal>
         <div className="container">
-          <span className="section-kicker">Continue crocando</span>
-          <h2 className="section-title">Você também pode gostar.</h2>
+          <span className="section-kicker">Outros sabores e kits</span>
+          <h2 className="section-title">Veja também.</h2>
           <ProductGrid products={related} />
         </div>
       </section>

@@ -28,7 +28,7 @@ describe('CartDrawer', () => {
     expect(screen.getByText('R$ 29,80')).toBeInTheDocument()
 
     await user.click(screen.getByRole('button', { name: /remover bicco's páprica/i }))
-    expect(screen.getByText(/sua sacola está leve/i)).toBeInTheDocument()
+    expect(screen.getByText(/sua sacola está vazia/i)).toBeInTheDocument()
   })
 
   it('closes from its close button', async () => {

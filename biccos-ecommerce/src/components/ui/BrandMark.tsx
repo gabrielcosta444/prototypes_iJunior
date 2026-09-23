@@ -4,16 +4,17 @@ interface BrandMarkProps {
 }
 
 export function BrandMark({ compact = false, inverse = false }: BrandMarkProps) {
+  const source = compact
+    ? `/assets/biccos-symbol-${inverse ? 'light' : 'dark'}.svg`
+    : `/assets/biccos-logo-${inverse ? 'light' : 'dark'}.svg`
+
   return (
     <a
       className={`brand-mark${compact ? ' brand-mark--compact' : ''}${inverse ? ' brand-mark--inverse' : ''}`}
       href="/"
       aria-label="Bicco's — ir para o início"
     >
-      <span className="brand-mark__symbol" aria-hidden="true">
-        <span>B</span>
-      </span>
-      {!compact && <span className="brand-mark__word">BICCO’S</span>}
+      <img src={source} alt="Logo Bicco's" />
     </a>
   )
 }

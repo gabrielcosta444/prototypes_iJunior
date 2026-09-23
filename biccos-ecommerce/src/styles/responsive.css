@@ -11,8 +11,9 @@
     font-size: clamp(2.55rem, 14vw, 4.2rem);
   }
 
-  .brand-mark__word {
-    font-size: 1.3rem;
+  .brand-mark img {
+    width: 82px;
+    height: 46px;
   }
 
   .site-header__inner {
@@ -31,8 +32,7 @@
 
   .site-nav,
   .site-header__search,
-  .cart-button > span,
-  .site-header .brand-mark__symbol {
+  .cart-button > span {
     display: none;
   }
 

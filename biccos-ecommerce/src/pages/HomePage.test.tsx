@@ -10,9 +10,10 @@ describe('HomePage', () => {
   it('presents the proposition, flavors, comparison and reviews', () => {
     render(<MemoryRouter initialEntries={['/']}><ShopProvider><App /></ShopProvider></MemoryRouter>)
 
-    expect(screen.getByRole('heading', { name: /salgadinho proteico/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /o 1º salgadinho proteico 100% natural/i })).toBeInTheDocument()
+    expect(screen.queryByText(/crec/i)).not.toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /escolha seu sabor/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /bicco’s.*barrinha/i })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: /quem prova/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /opinião de quem já provou/i })).toBeInTheDocument()
   })
 })

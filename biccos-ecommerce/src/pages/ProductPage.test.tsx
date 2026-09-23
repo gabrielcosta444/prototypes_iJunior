@@ -17,11 +17,11 @@ describe('ProductPage', () => {
     expect(screen.getByLabelText(/4.9 de 5 estrelas, 103 avaliações/i)).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /adicionar 1.*sacola/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /bicco’s.*barrinha/i })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: /quem prova/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /opinião de quem já provou/i })).toBeInTheDocument()
   })
 
   it('renders a friendly not-found page for an invalid product', () => {
     renderAt('/produto/inexistente')
-    expect(screen.getByRole('heading', { name: /esse sabor escapou/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /este produto não está disponível/i })).toBeInTheDocument()
   })
 })

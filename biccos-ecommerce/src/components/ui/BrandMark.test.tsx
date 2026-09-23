@@ -5,6 +5,8 @@ import { BrandMark } from './BrandMark'
 describe('BrandMark', () => {
   it("renders an accessible Bicco's home link", () => {
     render(<BrandMark />)
-    expect(screen.getByRole('link', { name: /bicco's.*início/i })).toHaveAttribute('href', '/')
+    const link = screen.getByRole('link', { name: /bicco's.*início/i })
+    expect(link).toHaveAttribute('href', '/')
+    expect(screen.getByRole('img', { name: /logo bicco's/i })).toHaveAttribute('src', '/assets/biccos-logo-dark.svg')
   })
 })

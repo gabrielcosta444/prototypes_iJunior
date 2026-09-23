@@ -1,6 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
+import '@fontsource/lilita-one/400.css'
+import '@fontsource-variable/montserrat'
 import { App } from './app/App'
 import { ShopProvider } from './store/ShopContext'
 import './styles/index.css'

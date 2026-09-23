@@ -13,14 +13,14 @@ export function SiteFooter() {
 
   return (
     <footer className="site-footer">
-      <div className="site-footer__newsletter">
+      <div className="site-footer__newsletter" data-reveal>
         <div className="container newsletter-grid">
           <div>
-            <span className="section-kicker">Clube dos crocantes</span>
-            <h2>Novidades que fazem <em>crec.</em></h2>
+            <span className="section-kicker">Newsletter Bicco’s</span>
+            <h2>Produtos, sabores e <em>novidades.</em></h2>
           </div>
           {subscribed ? (
-            <div className="newsletter-success" role="status">Pronto! Você entrou para a turma. ✦</div>
+            <div className="newsletter-success" role="status">Cadastro concluído. Obrigado! ✦</div>
           ) : (
             <form onSubmit={handleSubmit}>
               <label className="sr-only" htmlFor="newsletter-email">Seu melhor e-mail</label>
@@ -30,7 +30,7 @@ export function SiteFooter() {
           )}
         </div>
       </div>
-      <div className="site-footer__main">
+      <div className="site-footer__main" data-reveal>
         <div className="container footer-grid">
           <div className="footer-brand">
             <BrandMark inverse />

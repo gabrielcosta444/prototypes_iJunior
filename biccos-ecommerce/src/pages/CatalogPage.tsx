@@ -30,18 +30,18 @@ export function CatalogPage() {
 
   return (
     <>
-      <section className="catalog-hero">
+      <section className="catalog-hero" data-reveal>
         <div className="container catalog-hero__grid">
           <div>
-            <span className="section-kicker">Todos os crocantes</span>
+            <span className="section-kicker">Linha Bicco’s</span>
             <h1>Qual vai ser o seu <em>Bicco’s?</em></h1>
           </div>
-          <p>Escolha um sabor, monte o estoque ou comece pelo kit que passeia por todos eles. Dados e preços são demonstrativos.</p>
+          <p>Conheça os sabores individuais e os kits disponíveis. Dados e preços são demonstrativos.</p>
         </div>
-        <div className="catalog-hero__word" aria-hidden="true">CREC CREC CREC</div>
+        <div className="catalog-hero__word" aria-hidden="true">BICCO’S BICCO’S</div>
       </section>
 
-      <section className="catalog-section section">
+      <section className="catalog-section section" data-reveal>
         <div className="container">
           <div className="catalog-toolbar">
             <div className="filter-chips" aria-label="Filtrar produtos">

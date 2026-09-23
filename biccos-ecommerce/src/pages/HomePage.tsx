@@ -18,12 +18,13 @@ export function HomePage() {
   return (
     <>
       <section className="home-hero">
-        <div className="home-hero__pattern" aria-hidden="true">B B B B B B</div>
+        <div className="home-hero__pattern" aria-hidden="true" />
+        <img className="home-hero__floating-symbol" src="/assets/biccos-symbol-light.svg" alt="" aria-hidden="true" />
         <div className="container home-hero__grid">
-          <div className="home-hero__copy">
-            <span className="hero-pill"><Sparkles size={15} /> Proteína sem cara de suplemento</span>
-            <h1>O salgadinho proteico que faz <em>crec.</em></h1>
-            <p>Grão-de-bico assado, temperado e muito crocante. Um snack salgado para quem já cansou da barrinha de sempre.</p>
+          <div className="home-hero__copy" data-reveal>
+            <span className="hero-pill"><Sparkles size={15} /> Feito de grão-de-bico</span>
+            <h1>O 1º salgadinho proteico <em>100% natural.</em></h1>
+            <p>Grão-de-bico assado com azeite e temperos. Um snack salgado, prático e com ingredientes simples.</p>
             <div className="home-hero__actions">
               <Link className="button-link button-link--dark" to="/produtos">Quero provar <ArrowRight size={18} /></Link>
               <Link className="text-link" to="/#comparacao">Por que Bicco’s?</Link>
@@ -33,7 +34,9 @@ export function HomePage() {
               <span><strong>5</strong> sabores para escolher</span>
             </div>
           </div>
-          <div className="home-hero__visual">
+          <div className="home-hero__visual" data-reveal data-reveal-delay="2">
+            <span className="brand-orbit brand-orbit--one" aria-hidden="true" />
+            <span className="brand-orbit brand-orbit--two" aria-hidden="true" />
             <div className="hero-stamp hero-stamp--top">100%<br /><small>crocante</small></div>
             <img src="/assets/biccos-product-collage.png" alt="Pacotes coloridos de Bicco's em diversos sabores" />
             <div className="hero-stamp hero-stamp--bottom"><Leaf size={22} /><small>grão-de-bico assado</small></div>
@@ -43,7 +46,7 @@ export function HomePage() {
 
       <BenefitsMarquee />
 
-      <section className="flavors-section section">
+      <section className="flavors-section section" data-reveal>
         <div className="container">
           <div className="flavors-heading">
             <div>
@@ -59,16 +62,16 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="moments-section section">
+      <section className="moments-section section" data-reveal>
         <div className="container moments-grid">
           <div className="moments-photo">
             <img src="/assets/biccos-lifestyle.png" alt="Bicco's em uma rotina ativa e colorida" />
-            <span>vai com você →</span>
+            <span>pronto para levar →</span>
           </div>
           <div className="moments-copy">
-            <span className="section-kicker">Snack do seu jeito</span>
-            <h2>Da mochila ao sofá, sem cerimônia.</h2>
-            <p>Não precisa de shaker, colher nem geladeira. Só abrir o pacote e encontrar uma pausa gostosa no meio da rotina.</p>
+            <span className="section-kicker">Para diferentes momentos</span>
+            <h2>Um snack prático para a rotina.</h2>
+            <p>Não precisa de preparo ou refrigeração. O pacote pode acompanhar o trabalho, a faculdade ou o pós-treino.</p>
             <div className="moments-list">
               {moments.map(({ icon: Icon, label, color }) => (
                 <div className={`moment-item moment-item--${color}`} key={label}><span><Icon /></span>{label}</div>
@@ -80,15 +83,15 @@ export function HomePage() {
 
       <ComparisonTable />
 
-      <section className="manifesto-section section">
+      <section className="manifesto-section section" data-reveal>
         <div className="container manifesto-grid">
           <div className="manifesto-title">
-            <span className="section-kicker">Pouca complicação. Muito sabor.</span>
-            <h2>O grão-de-bico saiu da salada.</h2>
+            <span className="section-kicker">A base da receita</span>
+            <h2>Grão-de-bico, azeite e temperos.</h2>
           </div>
           <div className="manifesto-body">
-            <p className="manifesto-lead">A gente queria um lanche salgado que fosse prático como um salgadinho e honesto como comida de verdade.</p>
-            <p>Então assamos o grão-de-bico com azeite, colocamos temperos cheios de personalidade e deixamos a crocância fazer o resto.</p>
+            <p className="manifesto-lead">Uma receita curta para um snack salgado, assado e fácil de levar.</p>
+            <p>O grão-de-bico é assado com azeite e recebe combinações de temperos para cada sabor da linha.</p>
             <div className="manifesto-facts">
               <span><strong>01</strong> grão-de-bico</span>
               <span><strong>02</strong> azeite</span>
@@ -101,12 +104,12 @@ export function HomePage() {
 
       <ReviewsSection />
 
-      <section className="kit-banner section">
+      <section className="kit-banner section" data-reveal>
         <div className="container kit-banner__card">
           <div className="kit-banner__copy">
-            <span className="section-kicker">Não sabe por onde começar?</span>
-            <h2>Faça o tour completo da crocância.</h2>
-            <p>O Kit Descoberta reúne os cinco sabores para você provar sem precisar escolher favorito antes da hora.</p>
+            <span className="section-kicker">Kit Descoberta</span>
+            <h2>Os cinco sabores em um só kit.</h2>
+            <p>Uma seleção completa para conhecer a linha e decidir quais sabores entram na próxima compra.</p>
             <div className="kit-banner__price"><s>R$ 74,50</s><strong>R$ 67,90*</strong></div>
             <Link className="button-link button-link--dark" to={`/produto/${discoveryKit.slug}`}>Conhecer o kit <ArrowRight size={18} /></Link>
           </div>

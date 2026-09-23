@@ -1,4 +1,4 @@
-const benefits = ['10 g de proteína*', 'assado com azeite', 'crocância de verdade', 'cabe na bolsa', 'ingredientes simples*']
+const benefits = ['10 g de proteína*', 'assado com azeite', 'textura crocante', 'pronto para levar', 'ingredientes simples*']
 
 export function BenefitsMarquee() {
   return (

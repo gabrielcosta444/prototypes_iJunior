@@ -20,7 +20,7 @@ export function CartDrawer() {
       <aside className="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title">
         <header className="cart-drawer__header">
           <div>
-            <span className="eyebrow">crocâncias escolhidas</span>
+            <span className="eyebrow">itens selecionados</span>
             <h2 id="cart-title">Sua sacola</h2>
           </div>
           <button className="icon-button" aria-label="Fechar sacola" onClick={closeCart}><X /></button>
@@ -40,8 +40,8 @@ export function CartDrawer() {
         {items.length === 0 ? (
           <div className="cart-empty">
             <span className="cart-empty__icon"><ShoppingBag size={34} /></span>
-            <h3>Sua sacola está leve.</h3>
-            <p>Escolha um sabor e deixe a gente cuidar da crocância.</p>
+            <h3>Sua sacola está vazia.</h3>
+            <p>Escolha um sabor ou kit para continuar.</p>
             <Button onClick={closeCart}>Continuar escolhendo</Button>
           </div>
         ) : (
