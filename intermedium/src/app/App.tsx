@@ -3,6 +3,7 @@ import { usePrototype } from './PrototypeContext';
 import type { UserRole } from '../domain/types';
 import { AppShell } from '../layouts/AppShell';
 import { LoginPage, ManagerRegistrationPage, RecoveryPage, RegisterPage } from '../pages/auth/AuthPages';
+import { ManagerCondominiumPage, ManagerHomePage, ManagerProviderProfilePage, ManagerProvidersPage } from '../pages/manager/ManagerPages';
 
 const homeByRole: Record<UserRole, string> = { manager: '/sindico', provider: '/prestador', admin: '/admin' };
 
@@ -28,8 +29,10 @@ export function AppRoutes() {
       <Route path="/recuperar-senha" element={<RecoveryPage />} />
 
       <Route element={<RoleGuard role="manager" />}>
-        <Route path="/sindico" element={<EnvironmentPlaceholder title="Ambiente do condomínio" description="Encontre profissionais aprovados para cuidar do seu condomínio." />} />
-        <Route path="/sindico/*" element={<EnvironmentPlaceholder title="Ambiente do condomínio" description="Conteúdo em preparação." />} />
+        <Route path="/sindico" element={<ManagerHomePage />} />
+        <Route path="/sindico/prestadores" element={<ManagerProvidersPage />} />
+        <Route path="/sindico/prestadores/:id" element={<ManagerProviderProfilePage />} />
+        <Route path="/sindico/condominio" element={<ManagerCondominiumPage />} />
       </Route>
       <Route element={<RoleGuard role="provider" />}>
         <Route path="/prestador" element={<EnvironmentPlaceholder title="Ambiente do prestador" description="Acompanhe seu cadastro, perfil e assinatura." />} />

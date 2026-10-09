@@ -25,7 +25,7 @@ describe('authentication and routing', () => {
 
     await user.click(screen.getByRole('button', { name: /entrar como síndico/i }));
 
-    expect(await screen.findByRole('heading', { name: /ambiente do condomínio/i })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: /encontre o profissional certo/i })).toBeInTheDocument();
   });
 
   it('redirects a signed-in administrator away from provider routes', () => {
