@@ -77,6 +77,7 @@ export function ProviderStatusPage() {
     <div className="page-stack page-stack--narrow">
       <PageHeader eyebrow="Validação profissional" title="Situação cadastral" description="Acompanhe o andamento da sua aprovação." />
       {sent && <InlineAlert tone="success">Cadastro reenviado e devolvido à fila administrativa.</InlineAlert>}
+      {provider.blocked && <InlineAlert tone="danger"><strong>Perfil bloqueado:</strong> mesmo com cadastro e assinatura válidos, o perfil não aparece nas buscas até a liberação administrativa.</InlineAlert>}
       <section className={`status-detail status-detail--${content.tone}`}><span>{content.icon}</span><div><StatusBadge tone={content.tone}>{registrationLabels[provider.registrationStatus]}</StatusBadge><h2>{content.title}</h2><p>{content.description}</p></div></section>
       {provider.registrationStatus === 'rejected' && (
         <section className="surface-card rejection-card"><p className="eyebrow">Motivo informado pela análise</p><h3>Ajuste necessário</h3><p>{provider.rejectionReason}</p><div><Link to="/prestador/cadastro" className="button button--secondary">Corrigir informações</Link><Button onClick={resubmit}>Reenviar para análise</Button></div></section>
@@ -154,7 +155,7 @@ export function ProviderSubscriptionPage() {
       </section>
       <InlineAlert tone="info"><strong>Simulação:</strong> nenhuma cobrança será realizada. Os botões abaixo demonstram os retornos que um gateway de pagamento enviaria ao sistema definitivo.</InlineAlert>
       <Modal open={checkoutOpen} title="Checkout demonstrativo" onClose={() => setCheckoutOpen(false)} footer={<Button variant="ghost" onClick={() => setCheckoutOpen(false)}>Voltar</Button>}>
-        <div className="checkout-demo"><span><CreditCard /></span><h3>Simulação de pagamento</h3><p>Escolha um resultado para demonstrar como a assinatura e os eventos administrativos são atualizados.</p><Button onClick={() => setStatus('active')}><CheckCircle2 size={18} /> Simular pagamento aprovado</Button><Button variant="secondary" onClick={() => setStatus('delinquent')}><XCircle size={18} /> Simular falha de pagamento</Button></div>
+        <div className="checkout-demo"><span><CreditCard /></span><h3>Simulação de pagamento</h3><p>Escolha um resultado para demonstrar como a assinatura e os eventos administrativos são atualizados.</p><Button onClick={() => setStatus('active')}><CheckCircle2 size={18} /> Simular pagamento aprovado</Button><Button variant="secondary" onClick={() => setStatus('pending')}><LoaderCircle size={18} /> Simular pagamento pendente</Button><Button variant="secondary" onClick={() => setStatus('delinquent')}><XCircle size={18} /> Simular falha de pagamento</Button></div>
       </Modal>
     </div>
   );
@@ -169,7 +170,10 @@ export function ProviderRegistrationPage() {
   const [form, setForm] = useState({ ...provider, regionsText: provider.regions.join(', ') });
   const activeCategories = state.categories.filter((item) => item.active);
   const update = (changes: Partial<typeof form>) => setForm({ ...form, ...changes });
-  const persist = () => dispatch({ type: 'UPDATE_PROVIDER', providerId: provider.id, changes: { ...form, regions: form.regionsText.split(',').map((item) => item.trim()).filter(Boolean) } });
+  const persist = () => {
+    const { regionsText, ...providerChanges } = form;
+    dispatch({ type: 'UPDATE_PROVIDER', providerId: provider.id, changes: { ...providerChanges, regions: regionsText.split(',').map((item) => item.trim()).filter(Boolean) } });
+  };
   const next = () => {
     setError('');
     if (step === 1 && (!form.fullName || !form.cpf || !form.accountEmail || !form.phone)) return setError('Preencha os dados pessoais obrigatórios.');

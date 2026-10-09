@@ -47,4 +47,13 @@ describe('administrator workflows', () => {
 
     expect(within(row).getByText('Bloqueado')).toBeInTheDocument();
   });
+
+  it('opens a safe demonstration preview for private documents', async () => {
+    const user = userEvent.setup();
+    renderAdmin('/admin/analises/provider-3');
+
+    await user.click(screen.getByRole('button', { name: /pré-visualizar identificacao-mv.pdf/i }));
+
+    expect(screen.getByRole('dialog', { name: /pré-visualização demonstrativa/i })).toBeInTheDocument();
+  });
 });

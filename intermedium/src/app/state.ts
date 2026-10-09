@@ -87,7 +87,9 @@ export function prototypeReducer(state: DemoState, action: PrototypeAction): Dem
         subscriptionActivatedAt: action.status === 'active' ? now.toISOString().slice(0, 10) : item.subscriptionActivatedAt,
         nextPaymentAt: action.status === 'active' ? nextPayment.toISOString().slice(0, 10) : item.nextPaymentAt,
       }));
-      const details = eventDetails[action.status];
+      const details = action.status === 'active' && provider.subscriptionStatus === 'cancelled'
+        ? { type: 'reactivated' as const, description: 'Assinatura demonstrativa reativada' }
+        : eventDetails[action.status];
       return {
         ...next,
         paymentEvents: [{ id: `event-${Date.now()}`, providerId: action.providerId, ...details, createdAt: now.toISOString() }, ...next.paymentEvents],

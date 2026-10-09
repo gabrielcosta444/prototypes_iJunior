@@ -40,6 +40,15 @@ describe('prototype state transitions', () => {
     expect(next.paymentEvents.at(0)?.type).toBe('confirmed');
   });
 
+  it('records a reactivation event when a cancelled subscription becomes active', () => {
+    const initial = createSeedState();
+    initial.providers[0].subscriptionStatus = 'cancelled';
+
+    const next = prototypeReducer(initial, { type: 'SET_SUBSCRIPTION', providerId: 'provider-1', status: 'active' });
+
+    expect(next.paymentEvents.at(0)?.type).toBe('reactivated');
+  });
+
   it('hides and restores an otherwise eligible provider through blocking', () => {
     const initial = createSeedState();
     const blocked = prototypeReducer(initial, { type: 'TOGGLE_BLOCK_PROVIDER', providerId: 'provider-1' });

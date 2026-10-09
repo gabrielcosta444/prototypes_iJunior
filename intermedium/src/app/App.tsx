@@ -16,10 +16,6 @@ function RoleGuard({ role }: { role: UserRole }) {
   return <AppShell role={role} />;
 }
 
-function EnvironmentPlaceholder({ title, description }: { title: string; description: string }) {
-  return <section className="placeholder-page"><p className="eyebrow">FS Intermedium</p><h1>{title}</h1><p>{description}</p></section>;
-}
-
 export function AppRoutes() {
   const { state } = usePrototype();
   return (
