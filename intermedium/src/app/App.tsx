@@ -5,6 +5,7 @@ import { AppShell } from '../layouts/AppShell';
 import { LoginPage, ManagerRegistrationPage, RecoveryPage, RegisterPage } from '../pages/auth/AuthPages';
 import { ManagerCondominiumPage, ManagerHomePage, ManagerProviderProfilePage, ManagerProvidersPage } from '../pages/manager/ManagerPages';
 import { ProviderHomePage, ProviderProfilePage, ProviderRegistrationPage, ProviderStartPage, ProviderStatusPage, ProviderSubscriptionPage } from '../pages/provider/ProviderPages';
+import { AdminAnalysesPage, AdminAnalysisDetailPage, AdminCategoriesPage, AdminCondominiumsPage, AdminHomePage, AdminPaymentEventsPage, AdminProvidersPage, AdminSubscriptionsPage } from '../pages/admin/AdminPages';
 
 const homeByRole: Record<UserRole, string> = { manager: '/sindico', provider: '/prestador', admin: '/admin' };
 
@@ -43,8 +44,14 @@ export function AppRoutes() {
         <Route path="/prestador/cadastro" element={<ProviderRegistrationPage />} />
       </Route>
       <Route element={<RoleGuard role="admin" />}>
-        <Route path="/admin" element={<EnvironmentPlaceholder title="Ambiente administrativo" description="Gerencie validações e cadastros da plataforma." />} />
-        <Route path="/admin/*" element={<EnvironmentPlaceholder title="Ambiente administrativo" description="Conteúdo em preparação." />} />
+        <Route path="/admin" element={<AdminHomePage />} />
+        <Route path="/admin/analises" element={<AdminAnalysesPage />} />
+        <Route path="/admin/analises/:id" element={<AdminAnalysisDetailPage />} />
+        <Route path="/admin/prestadores" element={<AdminProvidersPage />} />
+        <Route path="/admin/condominios" element={<AdminCondominiumsPage />} />
+        <Route path="/admin/categorias" element={<AdminCategoriesPage />} />
+        <Route path="/admin/assinaturas" element={<AdminSubscriptionsPage />} />
+        <Route path="/admin/pagamentos" element={<AdminPaymentEventsPage />} />
       </Route>
       <Route path="*" element={<Navigate to={state.currentUser ? homeByRole[state.currentUser.role] : '/login'} replace />} />
     </Routes>

@@ -35,8 +35,8 @@ describe('authentication and routing', () => {
 
     renderAt('/prestador');
 
-    expect(screen.getByRole('heading', { name: /ambiente administrativo/i })).toBeInTheDocument();
-    expect(screen.queryByRole('heading', { name: /ambiente do prestador/i })).not.toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /visão geral/i })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: /olá, rafael/i })).not.toBeInTheDocument();
   });
 
   it('shows a validation error for unknown credentials', async () => {
