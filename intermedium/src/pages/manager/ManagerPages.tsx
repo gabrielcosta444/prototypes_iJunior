@@ -77,7 +77,7 @@ export function ManagerProvidersPage() {
         <label className="check-field"><input type="checkbox" checked={filters.urgentOnly} onChange={(event) => setFilters({ ...filters, urgentOnly: event.target.checked })} /><span>Somente urgências</span></label>
         <Button variant="ghost" onClick={() => setFilters(emptyFilters)}>Limpar filtros</Button>
       </section>
-
+//teste
       <div className="result-heading"><p><strong>{providers.length}</strong> {providers.length === 1 ? 'profissional encontrado' : 'profissionais encontrados'}</p><span>Resultados atualizados automaticamente</span></div>
       {providers.length > 0 ? (
         <div className="provider-grid">{providers.map((provider) => <ProviderCard key={provider.id} provider={provider} categories={state.categories} />)}</div>
