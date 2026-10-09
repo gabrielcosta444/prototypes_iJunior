@@ -4,6 +4,7 @@ import type { UserRole } from '../domain/types';
 import { AppShell } from '../layouts/AppShell';
 import { LoginPage, ManagerRegistrationPage, RecoveryPage, RegisterPage } from '../pages/auth/AuthPages';
 import { ManagerCondominiumPage, ManagerHomePage, ManagerProviderProfilePage, ManagerProvidersPage } from '../pages/manager/ManagerPages';
+import { ProviderHomePage, ProviderProfilePage, ProviderRegistrationPage, ProviderStartPage, ProviderStatusPage, ProviderSubscriptionPage } from '../pages/provider/ProviderPages';
 
 const homeByRole: Record<UserRole, string> = { manager: '/sindico', provider: '/prestador', admin: '/admin' };
 
@@ -25,7 +26,7 @@ export function AppRoutes() {
       <Route path="/login" element={state.currentUser ? <Navigate to={homeByRole[state.currentUser.role]} replace /> : <LoginPage />} />
       <Route path="/cadastro" element={<RegisterPage />} />
       <Route path="/cadastro/condominio" element={<ManagerRegistrationPage />} />
-      <Route path="/cadastro/prestador" element={<Navigate to="/login" replace />} />
+      <Route path="/cadastro/prestador" element={<ProviderStartPage />} />
       <Route path="/recuperar-senha" element={<RecoveryPage />} />
 
       <Route element={<RoleGuard role="manager" />}>
@@ -35,8 +36,11 @@ export function AppRoutes() {
         <Route path="/sindico/condominio" element={<ManagerCondominiumPage />} />
       </Route>
       <Route element={<RoleGuard role="provider" />}>
-        <Route path="/prestador" element={<EnvironmentPlaceholder title="Ambiente do prestador" description="Acompanhe seu cadastro, perfil e assinatura." />} />
-        <Route path="/prestador/*" element={<EnvironmentPlaceholder title="Ambiente do prestador" description="Conteúdo em preparação." />} />
+        <Route path="/prestador" element={<ProviderHomePage />} />
+        <Route path="/prestador/situacao" element={<ProviderStatusPage />} />
+        <Route path="/prestador/perfil" element={<ProviderProfilePage />} />
+        <Route path="/prestador/assinatura" element={<ProviderSubscriptionPage />} />
+        <Route path="/prestador/cadastro" element={<ProviderRegistrationPage />} />
       </Route>
       <Route element={<RoleGuard role="admin" />}>
         <Route path="/admin" element={<EnvironmentPlaceholder title="Ambiente administrativo" description="Gerencie validações e cadastros da plataforma." />} />
