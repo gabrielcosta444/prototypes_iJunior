@@ -30,11 +30,7 @@ export function ManagerHomePage() {
           <p>Consulte prestadores analisados pela FS Intermedium e fale diretamente pelo WhatsApp.</p>
           <Link to="/sindico/prestadores" className="button button--primary">Encontrar profissionais <ArrowRight size={18} /></Link>
         </div>
-        <div className="trust-card">
-          <ShieldCheck size={28} />
-          <strong>Curadoria FS</strong>
-          <p>{visibleCount} profissionais aptos para contato na demonstração.</p>
-        </div>
+        
       </section>
 
       <section>
