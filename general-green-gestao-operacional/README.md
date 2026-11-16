@@ -7,7 +7,7 @@ Protótipo visual independente para apresentação comercial. A aplicação demo
 ```powershell
 npm run dev
 ```
-..
+.
 Abra `http://localhost:5173` no navegador. O login é demonstrativo; basta clicar em **Entrar**.
 
 ## Fluxos recomendados para a reunião
